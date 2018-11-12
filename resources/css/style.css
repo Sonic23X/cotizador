@@ -1,0 +1,80 @@
+body{
+  background: #fbfbfb;
+}
+#menu
+{
+  background: white;
+}
+
+#formulario
+{
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/*rgb(190,143,0);*/
+
+#footer
+{
+  margin-top: 7%;
+  padding: 3% 3% 3% 3%;
+  background: #000;
+}
+#menu ul > li > a{
+  color: #404040;
+}
+
+#menu ul > li > a:hover, #menu ul > li > a.active{
+  color: #00b047;
+}
+.btn-warning{
+  background: #fee433;
+}
+h1, h2, h3, h4, h5, h6,
+#footer a{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: -1px 0px 1px rgba(150, 150, 150, 1);
+  margin: 5px;
+}
+#footer a{
+  color:rgb(73, 76, 80);
+  font-size: 18px;
+}
+#footer a:hover{
+  color: #fbfbfb;
+  text-decoration: none;
+}
+#footer a.icons-footer:hover{
+  border: 1px solid #fbfbfb;
+}
+
+.icons-footer >i{
+  font-size:20px;
+}
+.icons-footer{
+  color: rgb(73, 76, 80);
+  padding:15px;
+  border: 1px solid rgb(73, 76, 80);
+
+}
+.icon-FB{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.icon-IG{
+  padding-left: 2px;
+  padding-right: 1px;
+}
+.color-black{
+  color: black;
+}
+i.color-black:hover{
+  color: #00b047;
+}
