@@ -5,8 +5,7 @@
         <br>
         <h2 class="text-center">Solicita tu cotización para instalar
            tu sistema de paneles solares</h2>
-           <p class="text-center">Son sólo unos sencillos pasos para obtener la cotización a tu
-             medida, primero, necesitamos que registres tu información.</p>
+           <p class="text-center">¡Estas a sólo unos sencillos pasos para ayudar al medio ambiente y al planeta!.</p>
         <hr>
         <br>
         <div class="row">
@@ -67,6 +66,9 @@
         </div>
         <hr>
         <br>
-        <input type="submit" id="send" class="btn btn-warning form-control">
+        <input type="submit" id="send" class="btn btn-warning form-control" value="¿Cuantos paneles necesito?*">
       </form>
+    </div>
+    <div id="little_char">
+      <span>* Al enviar tu cotización aceptas nuestros terminos y condiciones</span>
     </div>

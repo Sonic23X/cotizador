@@ -1,5 +1,6 @@
 
     <footer id="footer" class="row">
+
       <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
         <div class="ml-3">
           <h5 class="text-light">Social</h5>
@@ -29,6 +30,7 @@
     <script type="text/javascript" src="<?= base_url() ?>vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?= base_url() ?>resources/js/script.js"></script>
     <script type="text/javascript" src="<?= base_url() ?>resources/js/tutorial.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>resources/js/email.js"></script>
   </body>
 
 

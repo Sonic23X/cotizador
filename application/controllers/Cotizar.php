@@ -41,24 +41,32 @@ class Cotizar extends CI_Controller{
 
   }
 
-  private function Email()
+  private function Email($usuario =  null)
   {
-    $email = "contacto@mercadosolar.com.mx";
+    if($usuario != null)
+    {
+      $email = "contacto@mercadosolar.com.mx";
 
-    $htmlContent = '<center>';
-    $htmlContent .= '<h1>Cotizadoción recibida</h1>';
-    $htmlContent .= '<p>Revise el PDF anexado con los datos</p>';
-    $htmlContent .= '</center>';
+      $htmlContent = '<center>';
+      $htmlContent .= '<h1>Cotizadoción recibida</h1>';
+      $htmlContent .= '<p>Revise el PDF anexado con los datos</p>';
+      $htmlContent .= '</center>';
 
-    $config['mailtype'] = 'html';
-    $this->email->initialize($config);
-    $this->email->to($email);
-    $this->email->from('noreply@mercadosolar.com.mx');
-    $this->email->subject('Cotizadoción recibida');
-    $this->email->message($htmlContent);
-    //$this->email->attach('files/attachment.pdf'); //anexar pdf
-    $this->email->send();
+      $config['mailtype'] = 'html';
+      $this->email->initialize($config);
+      $this->email->to($email);
+      $this->email->from('noreply@mercadosolar.com.mx');
+      $this->email->subject('Cotizadoción recibida');
+      $this->email->message($htmlContent);
+      $this->email->attach($_SERVER['DOCUMENT_ROOT'] . '/solar/cotizador/resources/pdf/'.$usuario.'.pdf'); //anexar pdf
+      $this->email->send();
 
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 
   function PDF($usuario = null)
@@ -66,7 +74,7 @@ class Cotizar extends CI_Controller{
     if($usuario != null)
     {
 
-      $url = "C:/xampp/htdocs/solar/cotizador/resources/HTML2PDF/html2pdf.class.php";
+      $url = "D:/xampp/htdocs/solar/cotizador/resources/HTML2PDF/html2pdf.class.php";
       require_once($url);
 
       $user = $this->Calc->SearchUser($usuario);
@@ -83,13 +91,14 @@ class Cotizar extends CI_Controller{
           $html2pdf->pdf->SetDisplayMode('fullpage');
           $html2pdf->writeHTML($content);
           ob_get_clean();
-          $html2pdf->Output('Cotizacion.pdf', 'I');
+          $html2pdf->Output('Cotizacion.pdf', 'I'); //nombre del PDF para el cliente
+          //guardar PDF en servidor
+          $html2pdf->Output($_SERVER['DOCUMENT_ROOT'] . '/solar/cotizador/resources/pdf/'.$usuario.'.pdf', 'F');
+          return true;
       }
       catch(HTML2PDF_exception $e) {
-          echo $e;
-          exit;
+          return false;
       }
-
     }
     else
       header('Location: ' . base_url());
@@ -102,10 +111,13 @@ class Cotizar extends CI_Controller{
       $this->load->view('common/head');
       $this->load->view('common/nav');
 
-      $pedido = $this->Calc->SearchConsume($usuario);
+      $pedido = $this->Calc->SearchConsume($usuario); //buscar cliente en mongoDB
 
-      $data = array('dinero' => $pedido[0]['costo'], 'panel_320' => $pedido[0]['paneles320']);
+      $data = array('dinero' => $pedido[0]['costo'], 'panel_320' => $pedido[0]['paneles320'], 'folio' => $usuario);
       $this->load->view('forms/result', $data);
+
+      //modal de bootstrap
+      $this->load->view('forms/alert');
 
       $this->load->view('common/footer');
     }

@@ -124,7 +124,7 @@ p{
         <table>
           <tr>
             <td rowspan="5">
-              <img src="C:/xampp/htdocs/solar/cotizador/resources/img/logo.jpg" style="margin-left: 20px;" width="150"height="150" >
+              <img src="D:/xampp/htdocs/solar/cotizador/resources/img/logo.jpg" style="margin-left: 20px;" width="150"height="150" >
             </td>
             <td class="p-20"></td>
             <td>

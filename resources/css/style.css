@@ -13,11 +13,52 @@ body{
   margin-right: 15%;
 }
 
+#send
+{
+  margin-bottom: 7%;
+}
+
+#send_cot
+{
+  background: rgb(255, 222, 26);
+  border-color: rgb(255, 222, 26);
+  color: black;
+  margin-bottom: 5%;
+  width: 20%;
+  font-weight: bold;
+}
+
+#send_cot:hover
+{
+  background: rgb(190,143,0);
+  border-color: rgb(190,143,0);
+}
+
+#send_emails
+{
+  background: rgb(255, 222, 26);
+  border-color: rgb(255, 222, 26);
+  color: black;
+  font-weight: bold;
+}
+
+#send_emails:hover
+{
+  background: rgb(190,143,0);
+  border-color: rgb(190,143,0);
+}
+
+#little_char
+{
+  font-size: 12px;
+  color: rgb(104, 101, 106);
+}
+
 /*rgb(190,143,0);*/
 
 #footer
 {
-  margin-top: 7%;
+  margin-top: 1%;
   padding: 3% 3% 3% 3%;
   background: #000;
 }
