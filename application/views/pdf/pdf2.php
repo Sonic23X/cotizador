@@ -18,22 +18,6 @@
           <td>$144 USD</td>
           <td>$<?= $costo ?> USD</td>
         </tr>
-        <tr>
-          <td style="text-align: center;">1</td>
-          <td style="text-align: center;"><?= $paneles320 ?></td>
-          <td>Pza.</td>
-          <td>Módulo Fotovoltaico Policristalino 320 WH</td>
-          <td>$144 USD</td>
-          <td>$<?= $costo ?> USD</td>
-        </tr>
-        <tr>
-          <td style="text-align: center;">1</td>
-          <td style="text-align: center;"><?= $paneles320 ?></td>
-          <td>Pza.</td>
-          <td>Módulo Fotovoltaico Policristalino 320 WH</td>
-          <td>$144 USD</td>
-          <td>$<?= $costo ?> USD</td>
-        </tr>
        </tbody>
       </table>
       <hr>
@@ -46,7 +30,17 @@
           <td class="text-center" valign="middle"><span class="bg-body p-10">$ &nbsp;&nbsp;<?= $costo ?> USD</span></td>
         </tr>
         <tr>
-          <td rowspan="2" valign="middle"><span class="fs-17"><b>CIENTO SESENTA Y SIETE 4/100 USD</b></span></td>
+          <td rowspan="2" valign="middle">
+            <span class="fs-17">
+              <b>
+                <?php
+                  echo NumeroALetras::convertir(intval($costo * 1.16));
+                  $decimales = explode(".", $costo * 1.16);
+                  echo $decimales[1] . "/100 USD";                  
+                ?>
+              </b>
+            </span>
+          </td>
           <td class="text-brown"><h5>IVA</h5></td>
           <td class="text-center" valign="middle"><span class="bg-body p-10">$ &nbsp;&nbsp;<?= $costo * 0.16 ?> USD</span></td>
         </tr>

@@ -17,6 +17,15 @@
       </center>
       <br><br><br><br>
     </div>
+
+    <div class="next_men" style="Display:none">
+      <h1 class="text-center">¡Gracias!</h1>
+      <h4 class="text-center">Un ejecutivo te contactá muy pronto  </h4>
+      <br><br>
+      <br><br><br><br>
+      <br><br><br><br>
+    </div>
+
     <div id="little_char">
 
       <span>* Precio sujeto al cambio de moneda EstadoUnidense a Mexicana</span>

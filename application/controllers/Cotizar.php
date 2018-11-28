@@ -41,10 +41,11 @@ class Cotizar extends CI_Controller{
 
   }
 
-  private function Email($usuario =  null)
+  function Email($usuario =  null)
   {
     if($usuario != null)
     {
+      $this->load->library('email'); //libreria nativa de codeigniter para enviar correos
       $email = "contacto@mercadosolar.com.mx";
 
       $htmlContent = '<center>';
@@ -73,7 +74,7 @@ class Cotizar extends CI_Controller{
   {
     if($usuario != null)
     {
-
+      $this->load->library('NumeroALetras');
       $url = "D:/xampp/htdocs/solar/cotizador/resources/HTML2PDF/html2pdf.class.php";
       require_once($url);
 
